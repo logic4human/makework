@@ -16,8 +16,8 @@
 ## - add admin user to sudoers
 
 sudo apt update
-sudo adduser admin
-usermod -aG sudo admin
+sudo adduser serveradmin
+usermod -aG sudo serveradmin
 
 
 ## 2.
@@ -27,9 +27,13 @@ usermod -aG sudo admin
 ## - create folder serveradmin inside user admin home directory
 ## - copy this script to the serveradmin folder
 
-su admin
-mkdir /home/admin/serveradmin
-scp my-docker-setup admin@host:/home/admin/serveradmin/.
+# alt 1.
+su serveradmin
+mkdir /home/serveradmin/serveradmin
+scp my-docker-setup serveradmin@host:/home/serveradmin/serveradmin/.
+
+# alt 2. git clone this file
+git clone https://github.com/logic4human/makework.git
 
 
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
@@ -55,7 +59,7 @@ su - ${USER}
 groups
 
 # add user to group docker, replace username with your username
-sudo usermod -aG docker username
+sudo usermod -aG docker ${USER}
 
 
 #install docker-compose
