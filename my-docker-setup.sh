@@ -71,7 +71,7 @@ sudo usermod -aG docker ${USER}
 https://github.com/docker/compose/releases
 
 mkdir -p ~/.docker/cli-plugins/
-curl -SL https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
 
 chmod +x ~/.docker/cli-plugins/docker-compose
 
